@@ -10,7 +10,11 @@ pipeline {
     }      
     stage('Test') {
         steps {
-          sh "aws ec2 describe-instances"       
+          sh "packer build something.json"
+          sh "cd tmp"
+          sh "terraform init"
+          sh "terraform plan"
+          
         }
     }    
     
