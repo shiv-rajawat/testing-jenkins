@@ -10,10 +10,10 @@ pipeline {
     }      
     stage('Test') {
         steps {
-          sh "cd tmp"
-          sh "echo $pwd"
-          sh "terraform init"
-          sh "terraform plan"
+          dir ("tmp"){          
+            sh "echo $pwd"
+            sh "terraform init"
+            sh "terraform plan"}
           
         }
     }    
