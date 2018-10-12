@@ -1,0 +1,23 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "ap-southeast-1",
+      "source_ami": "ami-0c5199d385b432989",
+      "instance_type": "t2.micro",
+      "associate_public_ip_address": "true",
+      "ami_virtualization_type": "hvm",
+      "ssh_username": "ubuntu",
+      "vpc_id": "vpc-d774b6b3",
+      "subnet_id": "subnet-b03217f6",
+
+      "ami_name": "packer-example {{timestamp}}"
+    }
+  ]
+} 
