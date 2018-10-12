@@ -10,8 +10,8 @@ pipeline {
     }      
     stage('Test') {
         steps {
-          sh "packer build something.json"
           sh "cd tmp"
+          sh "echo $pwd"
           sh "terraform init"
           sh "terraform plan"
           
